@@ -1,11 +1,14 @@
 bl_info = {
     "name": "Distool: Displacement & Normal Generator",
-    "author": "wsmnb12",
-    "version": (1, 0, 0),
-    "blender": (4, 4, 0),
+    "author": "wsmnb12-Alan+AI",
+    "version": (2, 1, 0),
+    "blender": (4, 5, 0),
     "location": "Shader Editor > Sidebar > Distool",
-    "description": "Generate normal/displacement maps from textures with no setup needed.",
+    "description": "Advanced normal/displacement map generator with multiple gradient operators and detail enhancement",
     "category": "Node",
+    "warning": "",
+    "wiki_url": "",
+    "tracker_url": ""
 }
 
 import sys
@@ -15,7 +18,7 @@ import zipfile
 
 
 addon_dir = os.path.dirname(__file__)
-lib_dir = os.path.join(addon_dir, "lib")
+lib_dir = os.path.join(addon_dir, "libs")
 
 # Ensure lib path is added to Python path
 if lib_dir not in sys.path:
@@ -27,7 +30,7 @@ def download_and_extract_lib():
         return  # already exists
 
     zip_url = "https://github.com/wsmnb12/Distool-/releases/download/libs/libs.zip" 
-    tmp_zip = os.path.join(addon_dir, "lib.zip")
+    tmp_zip = os.path.join(addon_dir, "libs.zip")
 
     try:
         print(f"[Distool] Downloading dependencies from {zip_url} ...")
@@ -37,7 +40,7 @@ def download_and_extract_lib():
         os.remove(tmp_zip)
         print("[Distool] Dependencies installed successfully.")
     except Exception as e:
-        print(f"[Distool] Failed to download/extract lib.zip: {e}")
+        print(f"[Distool] Failed to download/extract libs.zip: {e}")
 
 
 download_and_extract_lib()
