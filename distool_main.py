@@ -1,10 +1,10 @@
 bl_info = {
     "name": "Distool: Displacement & Normal Generator",
     "author": "wsmnb12-Alan+AI",
-    "version": (2, 1),
+    "version": (2, 1, 0),
     "blender": (4, 5, 0),
     "location": "Shader Editor > Sidebar > Distool",
-    "description": "Advanced normal/displacement map generator with multiple gradient operators and detail enhancement",
+    "description": "Advanced normal/displacement map generator with multiple gradient operators and detail enhancement. Includes automatic dependency management and installation wizard.",
     "category": "Node",
 }
 

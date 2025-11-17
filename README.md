@@ -1,5 +1,5 @@
 
-# Distool 2.0 / Distool 2.0
+# Distool 2.1 / Distool 2.1
 ### Displacement and Normal Map Generator for Blender v4.5 / Blender 4.5 位移和法线贴图生成器
 
 ## 🎉 重要更新 / Major Update
@@ -43,13 +43,42 @@ Want to seamlessly generate displacement and normal maps natively within Blender
 
 ## 🚀 使用方法 / How to Use
 
+### 环境准备 / Environment Setup
+
+#### 系统要求 / System Requirements
+- **Blender**: 4.5.0 或更高版本 / 4.5.0 or higher
+- **Python**: 3.10+ (Blender内置 / Built-in with Blender)
+- **内存**: 4GB RAM (推荐8GB+ / Recommended 8GB+)
+- **存储**: 500MB 可用空间 / 500MB available space
+
+#### 依赖库安装 / Dependency Installation
+
+**方法一：自动安装（推荐）**
+1. 启动Blender并启用Distool插件
+2. 在Shader Editor侧边栏找到 `Distool` 面板
+3. 点击 `快速安装` 按钮启动安装向导
+4. 跟随向导完成依赖库自动安装
+
+**方法二：手动安装**
+```python
+# 在Blender Python控制台中执行
+import subprocess
+import sys
+subprocess.run([sys.executable, "-m", "pip", "install", "numpy scipy opencv-python"])
+```
+
+**方法三：离线安装**
+1. 在有网络的机器上创建离线安装包
+2. 将离线包复制到目标机器
+3. 在插件设置中使用离线包安装
+
+### 基本使用步骤 / Basic Usage Steps:
+
 Distool可通过`着色器编辑器`访问。需要基础图像纹理来生成位移和法线贴图。
 Distool is accessible via the `shader editor`. A base image texture is required to generate displacement and normal maps.
 
 **注意**: 确保在`着色器编辑器 > 选项 > 位移 > 位移和凹凸`中启用位移
 **Note**: Ensure to enable displacement within `shader editor > options > displacement > displacement and bump`
-
-### 基本使用步骤 / Basic Usage Steps:
 
 1. **选择基础图像纹理** / Select your base image texture
 2. **勾选生成选项** / Check an option to either generate a displacement or normal map
@@ -61,6 +90,30 @@ Distool is accessible via the `shader editor`. A base image texture is required 
 - **细节增强**: 多尺度细节增强算法
 - **伽马校正**: 预处理图像优化
 - **法线平滑**: 可选的法线贴图平滑处理
+
+### 故障排除 / Troubleshooting
+
+#### 常见问题 / Common Issues
+
+**Q: 插件无法启用？**
+- 检查Blender版本是否为4.5+
+- 确认依赖库已正确安装
+- 查看控制台错误信息
+
+**Q: 依赖安装失败？**
+- 检查网络连接
+- 尝试使用管理员权限运行Blender
+- 使用离线安装包
+
+**Q: 找不到Distool面板？**
+- 确保在Shader Editor中工作
+- 按N键打开侧边栏
+- 查找Distool标签
+
+**Q: 生成的法线贴图异常？**
+- 检查输入图片格式
+- 调整法线强度参数
+- 确认通道反转设置正确
 
 ## 📦 安装方法 / Installation
 
@@ -124,16 +177,20 @@ Or drag and drop the `.zip` into Blender
 ## 🔄 更新日志 / Changelog
 
 ### v2.1 (当前版本 / Current Version)
-- 🎉 **法线算法重构**: 完全重写法线贴图生成算法
-- 🔧 **多算子支持**: 新增Sobel、Prewitt、Scharr算子
-- 📊 **质量提升**: 修复颜色通道和方向问题
+- 🎉 **自动依赖管理**: 智能检测和安装numpy、scipy、opencv-python
+- 🧙 **安装向导**: 五步安装向导，简化用户配置流程
+- 📦 **离线安装包**: 支持网络受限环境的离线安装
+- 🔧 **依赖管理面板**: 可视化依赖状态，一键安装缺失库
+- 🎯 **法线算法重构**: 完全重写法线贴图生成算法
+- 📊 **多算子支持**: 新增Sobel、Prewitt、Scharr算子
 - 🚀 **Blender 4.5**: 完全适配最新版本
 - 📱 **界面优化**: 改进用户界面和交互体验
+- 📚 **文档完善**: 详细的安装指南和故障排除
 
 ### v2.0
 - 🎨 **界面重设计**: 全新的用户界面
 - ⚡ **性能优化**: 提升处理速度
-- 📦 **依赖管理**: 自动依赖安装系统
+- 🐛 **质量修复**: 修复红色调异常和Y轴方向问题
 
 ## 📄 许可证 / License
 
@@ -147,4 +204,4 @@ Distool uses an MIT license, allowing free use, modification, and distribution.
 感谢所有为Distool项目做出贡献的开发者和用户！
 Thanks to all developers and users who contributed to the Distool project!
 
-**立即体验Distool 2.0的强大功能！/ Experience the powerful features of Distool 2.0 now!** 🚀
+**立即体验Distool 2.1的强大功能和智能依赖管理！/ Experience the powerful features and smart dependency management of Distool 2.1 now!** 🚀
