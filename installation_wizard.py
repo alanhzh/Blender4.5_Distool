@@ -89,7 +89,7 @@ class DISTOOL_OT_InstallationWizard(Operator):
         col.label(text="Distool is a powerful normal map and displacement map generation tool")
         
         col.separator()
-        col.label(text="点击"下一步"开始 / Click 'Next' to begin", icon='FORWARD')
+        col.label(text="点击'下一步'开始 / Click 'Next' to begin", icon='FORWARD')
     
     def draw_system_check_step(self, layout, context):
         """绘制系统检查步骤 / Draw system check step"""
@@ -150,7 +150,7 @@ class DISTOOL_OT_InstallationWizard(Operator):
             col.label(text="所有依赖已就绪！/ All dependencies ready!", icon='CHECKMARK')
         else:
             col.label(text="需要安装缺失的依赖库 / Need to install missing dependencies")
-            col.label(text="点击"下一步"开始安装 / Click 'Next' to start installation", icon='FORWARD')
+            col.label(text="点击'下一步'开始安装 / Click 'Next' to start installation", icon='FORWARD')
     
     def draw_install_step(self, layout, context):
         """绘制安装步骤 / Draw installation step"""
